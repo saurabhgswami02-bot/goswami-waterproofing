@@ -208,3 +208,54 @@ nav a{
 }
 
 }
+/* ===== Modern Sky Blue Theme ===== */
+
+body {
+    background-color: #EAF8FF;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(90deg, #00A2FF, #4FC3F7);
+}
+
+.btn,
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover,
+button:hover {
+    background: #005FCC;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.service-card,
+.gallery img {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: .4s;
+}
+
+.hero {
+    background: linear-gradient(135deg,#0099FF,#87CEEB);
+    color: white;
+}
