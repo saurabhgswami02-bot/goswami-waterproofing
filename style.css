@@ -671,3 +671,46 @@ font-size:18px;
 }
 
 }
+/* MOBILE HERO FIX */
+
+@media (max-width:768px){
+
+.hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:120px 7% 80px;
+}
+
+.hero-left h1{
+    font-size:58px;
+    line-height:1.1;
+}
+
+.hero-left p{
+    font-size:18px;
+}
+
+.hero-right{
+    margin-top:40px;
+}
+
+.hero-right img{
+    width:100%;
+    max-width:380px;
+}
+
+.hero-features{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    gap:15px;
+}
+
+.hero-buttons a{
+    width:100%;
+}
+
+}
