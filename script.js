@@ -1,127 +1,161 @@
-// =============================
-// Goswami Waterproofing & Paints
-// script.js
-// =============================
+// ===========================
+// GOSWAMI WATERPROOFING
+// Premium Website Script
+// ===========================
 
-// Smooth scrolling
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
+// Sticky Header
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+});
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+
+        const target = document.querySelector(this.getAttribute("href"));
 
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth'
+                behavior: "smooth"
             });
         }
     });
 });
 
-// Sticky header shadow
-const header = document.querySelector("header");
+// Scroll Reveal
+const reveals = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
+function revealSection() {
 
-    if (window.scrollY > 50) {
-        header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.25)";
-    } else {
-        header.style.boxShadow = "none";
-    }
+    reveals.forEach(sec => {
 
-});
+        let top = sec.getBoundingClientRect().top;
+        let height = window.innerHeight;
 
-// Fade animation on scroll
-const sections = document.querySelectorAll("section");
-
-function revealSections() {
-
-    sections.forEach(section => {
-
-        const top = section.getBoundingClientRect().top;
-        const height = window.innerHeight;
-
-        if (top < height - 100) {
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
+        if (top < height - 120) {
+            sec.classList.add("show");
         }
 
     });
 
 }
 
-sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(40px)";
-    section.style.transition = "0.8s ease";
+window.addEventListener("scroll", revealSection);
+revealSection();
+
+// Counter Animation
+const counters = document.querySelectorAll(".counter h2");
+
+const speed = 100;
+
+counters.forEach(counter => {
+
+    const update = () => {
+
+        const target = parseInt(counter.innerText);
+
+        if (isNaN(target)) return;
+
+        const count = +counter.getAttribute("data-count") || 0;
+
+        const inc = target / speed;
+
+        if (count < target) {
+
+            const next = Math.ceil(count + inc);
+
+            counter.setAttribute("data-count", next);
+
+            counter.innerText = next + "+";
+
+            setTimeout(update, 20);
+
+        } else {
+
+            counter.innerText = target + "+";
+
+        }
+
+    };
+
+    update();
+
 });
 
-window.addEventListener("scroll", revealSections);
-revealSections();
+// Active Menu
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
 
-// Gallery image popup
-const images = document.querySelectorAll(".gallery img");
+window.addEventListener("scroll", () => {
 
-images.forEach(img => {
+    let current = "";
 
-    img.addEventListener("click", () => {
+    sections.forEach(section => {
 
-        const popup = document.createElement("div");
+        const top = section.offsetTop - 120;
 
-        popup.style.position = "fixed";
-        popup.style.top = "0";
-        popup.style.left = "0";
-        popup.style.width = "100%";
-        popup.style.height = "100%";
-        popup.style.background = "rgba(0,0,0,.9)";
-        popup.style.display = "flex";
-        popup.style.alignItems = "center";
-        popup.style.justifyContent = "center";
-        popup.style.cursor = "pointer";
-        popup.style.zIndex = "9999";
+        if (pageYOffset >= top) {
 
-        const image = document.createElement("img");
+            current = section.getAttribute("id");
 
-        image.src = img.src;
-        image.style.maxWidth = "90%";
-        image.style.maxHeight = "90%";
-        image.style.borderRadius = "10px";
+        }
 
-        popup.appendChild(image);
+    });
 
-        popup.onclick = () => popup.remove();
+    navLinks.forEach(link => {
 
-        document.body.appendChild(popup);
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") == "#" + current) {
+
+            link.classList.add("active");
+
+        }
 
     });
 
 });
 
-// Back to Top Button
+// Back To Top
 const topBtn = document.createElement("button");
 
 topBtn.innerHTML = "↑";
+
+topBtn.id = "topBtn";
+
+document.body.appendChild(topBtn);
+
 topBtn.style.position = "fixed";
-topBtn.style.bottom = "20px";
 topBtn.style.right = "20px";
+topBtn.style.bottom = "170px";
 topBtn.style.width = "50px";
 topBtn.style.height = "50px";
-topBtn.style.border = "none";
 topBtn.style.borderRadius = "50%";
+topBtn.style.border = "none";
 topBtn.style.background = "#004aad";
 topBtn.style.color = "#fff";
-topBtn.style.fontSize = "24px";
+topBtn.style.fontSize = "22px";
 topBtn.style.cursor = "pointer";
 topBtn.style.display = "none";
 topBtn.style.zIndex = "999";
 
-document.body.appendChild(topBtn);
-
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 400) {
+    if (window.scrollY > 500) {
+
         topBtn.style.display = "block";
+
     } else {
+
         topBtn.style.display = "none";
+
     }
 
 });
@@ -129,18 +163,49 @@ window.addEventListener("scroll", () => {
 topBtn.onclick = () => {
 
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+
+        top:0,
+
+        behavior:"smooth"
+
     });
 
 };
 
-// Footer Year
-const footer = document.querySelector("footer p");
+// Gallery Popup
+document.querySelectorAll(".gallery img").forEach(img=>{
 
-if (footer) {
-    footer.innerHTML =
-        `© ${new Date().getFullYear()} Goswami Waterproofing & Paints. All Rights Reserved.`;
+img.onclick=()=>{
+
+const popup=document.createElement("div");
+
+popup.style.position="fixed";
+popup.style.top="0";
+popup.style.left="0";
+popup.style.width="100%";
+popup.style.height="100%";
+popup.style.background="rgba(0,0,0,.85)";
+popup.style.display="flex";
+popup.style.alignItems="center";
+popup.style.justifyContent="center";
+popup.style.zIndex="9999";
+
+const image=document.createElement("img");
+
+image.src=img.src;
+
+image.style.maxWidth="90%";
+image.style.maxHeight="90%";
+image.style.borderRadius="10px";
+
+popup.appendChild(image);
+
+popup.onclick=()=>popup.remove();
+
+document.body.appendChild(popup);
+
 }
+
+});
 
 console.log("Website Loaded Successfully");
