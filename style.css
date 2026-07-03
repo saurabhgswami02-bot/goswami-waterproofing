@@ -1,8 +1,7 @@
-
-/* ===========================
+/* ===================================
    GOSWAMI WATERPROOFING & PAINTS
-   Premium Style Sheet
-=========================== */
+   PREMIUM STYLE.CSS - PART 1
+=================================== */
 
 *{
 margin:0;
@@ -12,15 +11,24 @@ font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
-body{ padding-top:95px;
-background:#EAF8FF;
+body{
+background:#eef8ff;
 color:#222;
+overflow-x:hidden;
+padding-top:95px;
 line-height:1.7;
 }
 
-/* Header */
+img{
+max-width:100%;
+display:block;
+}
 
-/* PREMIUM HEADER */
+a{
+text-decoration:none;
+}
+
+/* HEADER */
 
 .header{
 position:fixed;
@@ -32,7 +40,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 6%;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 z-index:9999;
 }
 
@@ -42,11 +50,11 @@ height:60px;
 
 .navbar{
 display:flex;
-gap:30px;
+align-items:center;
+gap:28px;
 }
 
 .navbar a{
-text-decoration:none;
 font-size:17px;
 font-weight:600;
 color:#222;
@@ -54,8 +62,8 @@ transition:.3s;
 }
 
 .navbar a:hover,
-.navbar .active{
-color:#007BFF;
+.navbar a.active{
+color:#0A66FF;
 }
 
 .header-buttons{
@@ -65,21 +73,20 @@ gap:15px;
 
 .call-btn,
 .whatsapp-btn{
-padding:12px 24px;
+padding:13px 24px;
 border-radius:10px;
 font-weight:600;
-text-decoration:none;
 transition:.3s;
 }
 
 .call-btn{
-border:2px solid #007BFF;
-color:#007BFF;
+border:2px solid #0A66FF;
+color:#0A66FF;
 background:#fff;
 }
 
 .call-btn:hover{
-background:#007BFF;
+background:#0A66FF;
 color:#fff;
 }
 
@@ -89,287 +96,87 @@ color:#fff;
 }
 
 .whatsapp-btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-}
-
-/* About */
-
-.about{
-background:#fff;
-border-radius:20px;
-margin:40px 8%;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+transform:translateY(-4px);
+box-shadow:0 10px 20px rgba(0,0,0,.2);
 }
 
-.about ul{
-margin-top:20px;
-padding-left:20px;
-}
-
-.about li{
-margin:10px 0;
-}
-
-/* Services */
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.service-card{
-background:#fff;
-padding:35px;
-text-align:center;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.4s;
-}
-
-.service-card:hover{
-transform:translateY(-10px);
-}
-
-.service-card i{
-font-size:50px;
-color:#0099FF;
-margin-bottom:20px;
-}
-
-.service-card h3{
-margin-bottom:15px;
-}
-
-/* Gallery */
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.gallery-grid img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-transition:.4s;
-cursor:pointer;
-}
-
-.gallery-grid img:hover{
-transform:scale(1.05);
-}
-
-/* Booking */
-
-.booking form{
-max-width:700px;
-margin:auto;
-background:#fff;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-
-.booking input,
-.booking select,
-.booking textarea{
-width:100%;
-padding:15px;
-margin:12px 0;
-border:1px solid #ddd;
-border-radius:10px;
-font-size:16px;
-}
-
-.booking textarea{
-height:140px;
-resize:none;
-}
-
-.booking button{
-width:100%;
-padding:16px;
-background:#007BFF;
-color:#fff;
-font-size:18px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
-}
-
-.booking button:hover{
-background:#005FCC;
-}
-
-/* Contact */
-
-.contact{
-background:#0099FF;
-color:#fff;
-text-align:center;
-}
-
-.contact a{
-color:#fff;
-text-decoration:none;
-font-weight:600;
-}
-
-/* Floating WhatsApp */
-
-.floating-whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
-height:65px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:34px;
-color:#fff;
-text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-z-index:999;
-animation:bounce 2s infinite;
-}
-
-/* Footer */
-
-footer{
-background:#003B73;
-color:#fff;
-text-align:center;
-padding:25px;
-}
-
-/* Animations */
-
-@keyframes bounce{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-}
-
-nav{
-flex-wrap:wrap;
-justify-content:center;
-margin-top:15px;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-.logo img{
-height:60px;
-}
-
-}
-
-/* PREMIUM HERO */
+/* HERO */
 
 .hero{
 position:relative;
 min-height:100vh;
 display:flex;
 align-items:center;
-padding:150px 8% 80px;
-background:url("hero-bg.jpg") center/cover;
+padding:120px 8% 80px;
+background:url("hero-bg.jpg") center center/cover no-repeat;
 overflow:hidden;
 }
 
-.hero-overlay{
+.hero::before{
+content:"";
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:linear-gradient(90deg,#062c6fdd 35%,#0b74ff55);
+background:linear-gradient(90deg,#0a2b6d 30%,rgba(10,102,255,.25));
 }
 
 .hero-content{
 position:relative;
+z-index:2;
 display:grid;
 grid-template-columns:1fr 1fr;
 align-items:center;
+gap:60px;
 width:100%;
-z-index:2;
-gap:40px;
+}
+
+.hero-left{
+color:#fff;
 }
 
 .hero-badge{
 display:inline-block;
-padding:10px 20px;
-background:#1565ff;
-color:#fff;
-border-radius:30px;
+background:#0A66FF;
+padding:12px 22px;
+border-radius:40px;
 font-weight:600;
 margin-bottom:25px;
 }
 
-.hero h1{
+.hero-left h1{
 font-size:68px;
 font-weight:800;
-color:#fff;
 line-height:1.1;
+margin-bottom:20px;
 }
 
-.hero h1 span{
-color:#24a0ff;
+.hero-left h1 span{
+color:#31a8ff;
 }
 
-.hero h3{
-color:#fff;
-margin:30px 0 15px;
-font-size:26px;
+.hero-left h3{
+font-size:30px;
+margin-bottom:20px;
 }
 
-.hero p{
-color:#eee;
+.hero-left p{
 font-size:20px;
-line-height:1.8;
-max-width:650px;
+color:#f1f1f1;
+margin-bottom:35px;
 }
 
 .hero-features{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
-margin:40px 0;
-color:#fff;
+gap:18px;
+margin-bottom:40px;
+}
+
+.hero-features div{
 font-size:18px;
+color:#fff;
 }
 
 .hero-buttons{
@@ -380,17 +187,20 @@ flex-wrap:wrap;
 
 .book-btn,
 .call-btn2{
-padding:18px 35px;
+padding:18px 34px;
 border-radius:12px;
 font-size:18px;
 font-weight:700;
-text-decoration:none;
 transition:.3s;
 }
 
 .book-btn{
-background:#1565ff;
+background:#0A66FF;
 color:#fff;
+}
+
+.book-btn:hover{
+background:#005fd1;
 }
 
 .call-btn2{
@@ -398,73 +208,25 @@ border:2px solid #fff;
 color:#fff;
 }
 
-.book-btn:hover,
 .call-btn2:hover{
-transform:translateY(-5px);
+background:#fff;
+color:#0A66FF;
+}
+
+.hero-right{
+display:flex;
+justify-content:center;
 }
 
 .hero-right img{
+max-width:600px;
 width:100%;
-max-width:650px;
-display:block;
 }
+/* ==========================
+   PART 2 - STATS + ABOUT + SERVICES
+========================== */
 
-/* PREMIUM STATS */
-
-.stats{
-margin-top:-70px;
-position:relative;
-z-index:20;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-padding:0 6% 80px;
-}
-
-.stat-box{
-background:#fff;
-padding:35px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,.12);
-transition:.35s;
-}
-
-.stat-box:hover{
-transform:translateY(-10px);
-}
-
-.stat-box .icon{
-width:80px;
-height:80px;
-margin:auto;
-border-radius:50%;
-background:#0A66FF;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:36px;
-color:#fff;
-margin-bottom:20px;
-}
-
-.stat-box h2{
-font-size:36px;
-color:#0A66FF;
-margin-bottom:10px;
-}
-
-.stat-box p{
-font-size:18px;
-color:#666;
-}
-
-/* PREMIUM SERVICES */
-
-.services{
-padding:90px 6%;
-background:#f8fbff;
-}
+/* SECTION TITLE */
 
 .section-title{
 text-align:center;
@@ -475,6 +237,7 @@ margin-bottom:60px;
 font-size:42px;
 color:#0A66FF;
 margin-bottom:15px;
+font-weight:700;
 }
 
 .section-title p{
@@ -482,9 +245,96 @@ font-size:18px;
 color:#666;
 }
 
+/* STATS */
+
+.stats{
+padding:70px 6%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+background:#eef8ff;
+}
+
+.stat-box{
+background:#fff;
+padding:35px 25px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.stat-box:hover{
+transform:translateY(-10px);
+}
+
+.stat-box .icon{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.stat-box h2{
+font-size:34px;
+color:#0A66FF;
+margin-bottom:10px;
+}
+
+.stat-box p{
+color:#666;
+font-size:17px;
+}
+
+/* ABOUT */
+
+.about{
+padding:90px 6%;
+background:#fff;
+}
+
+.about-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.about-text h2{
+font-size:42px;
+margin-bottom:20px;
+color:#0A66FF;
+}
+
+.about-text p{
+font-size:18px;
+color:#555;
+margin-bottom:20px;
+}
+
+.about-text ul{
+padding-left:20px;
+}
+
+.about-text li{
+margin-bottom:12px;
+font-size:17px;
+}
+
+/* SERVICES */
+
+.services{
+padding:90px 6%;
+background:#f8fbff;
+}
+
 .services-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(3,1fr);
 gap:30px;
 }
 
@@ -493,26 +343,18 @@ background:#fff;
 padding:35px;
 border-radius:20px;
 text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-transition:.35s;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
 }
 
 .service-card:hover{
 transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(10,102,255,.2);
+box-shadow:0 15px 35px rgba(10,102,255,.18);
 }
 
 .service-icon{
-width:80px;
-height:80px;
-background:#0A66FF;
-color:#fff;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:36px;
-margin:0 auto 25px;
+font-size:50px;
+margin-bottom:20px;
 }
 
 .service-card h3{
@@ -522,11 +364,16 @@ color:#222;
 }
 
 .service-card p{
+font-size:17px;
 color:#666;
-line-height:1.7;
+line-height:1.8;
 }
+/* ===================================
+   PART 3 - GALLERY + TESTIMONIALS +
+   BOOKING + CONTACT + FOOTER
+=================================== */
 
-/* PREMIUM GALLERY */
+/* GALLERY */
 
 .gallery{
 padding:90px 6%;
@@ -535,18 +382,18 @@ background:#fff;
 
 .gallery-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .gallery-img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
 border-radius:18px;
 cursor:pointer;
 transition:.35s;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 .gallery-img:hover{
@@ -560,10 +407,10 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.9);
+background:rgba(0,0,0,.92);
 justify-content:center;
 align-items:center;
-z-index:9999;
+z-index:99999;
 }
 
 .lightbox img{
@@ -574,14 +421,14 @@ border-radius:15px;
 
 #closeLightbox{
 position:absolute;
-top:25px;
+top:20px;
 right:35px;
 font-size:45px;
 color:#fff;
 cursor:pointer;
 }
 
-/* PREMIUM TESTIMONIALS */
+/* TESTIMONIALS */
 
 .testimonials{
 padding:90px 6%;
@@ -590,7 +437,7 @@ background:#f8fbff;
 
 .testimonial-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(3,1fr);
 gap:30px;
 }
 
@@ -598,7 +445,7 @@ gap:30px;
 background:#fff;
 padding:35px;
 border-radius:20px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+box-shadow:0 12px 30px rgba(0,0,0,.08);
 transition:.3s;
 }
 
@@ -609,159 +456,296 @@ transform:translateY(-10px);
 .stars{
 font-size:24px;
 color:#FFD700;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .testimonial-card p{
-font-size:17px;
-color:#555;
+color:#666;
 line-height:1.8;
 margin-bottom:20px;
 }
 
 .testimonial-card h4{
 color:#0A66FF;
+}
+
+/* BOOKING */
+
+.booking{
+padding:90px 6%;
+background:#fff;
+}
+
+.booking form{
+max-width:700px;
+margin:auto;
+background:#f8fbff;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.booking input,
+.booking select,
+.booking textarea{
+width:100%;
+padding:15px;
+margin-bottom:18px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.booking button{
+width:100%;
+padding:16px;
+background:#0A66FF;
+color:#fff;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
+/* CONTACT */
+
+.contact{
+padding:90px 6%;
+background:#0A66FF;
+color:#fff;
+text-align:center;
+}
+
+.contact h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.contact p{
+margin-bottom:10px;
 font-size:18px;
 }
 
-/* MOBILE FIX */
-
-@media (max-width:768px){
-
-.gallery{
-    padding:60px 20px;
+.contact a{
+color:#fff;
+font-weight:600;
 }
 
-.gallery-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:20px;
+/* FOOTER */
+
+footer{
+background:#032A63;
+color:#fff;
+text-align:center;
+padding:25px;
+font-size:16px;
 }
 
-.gallery-grid img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-    border-radius:18px;
-    display:block;
+/* FLOATING WHATSAPP */
+
+.floating-whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+color:#fff;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+z-index:999;
+transition:.3s;
 }
 
-.stats{
-    grid-template-columns:1fr;
-    gap:20px;
-    margin-top:20px;
+.floating-whatsapp:hover{
+transform:scale(1.1);
 }
+/* ===================================
+   PART 4 - RESPONSIVE DESIGN
+=================================== */
 
-.services-grid{
-    grid-template-columns:1fr;
-}
+/* Tablet */
+@media (max-width:992px){
 
-.hero{
-    grid-template-columns:1fr;
-    text-align:center;
+.hero-content,
+.about-content{
+display:grid;
+grid-template-columns:1fr;
+text-align:center;
 }
 
 .hero-right{
-    margin-top:30px;
+margin-top:40px;
 }
 
-.hero-right img{
-    width:100%;
-    max-width:350px;
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.services-grid,
+.gallery-grid,
+.testimonial-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
 }
 
-/* ========= MOBILE RESPONSIVE ========= */
-
+/* Mobile */
 @media (max-width:768px){
 
 body{
 overflow-x:hidden;
+padding-top:120px;
 }
 
-header,
-.navbar{
-padding:15px;
+/* Header */
+
+.header{
 flex-direction:column;
+padding:15px 20px;
 gap:15px;
 }
 
 .logo img{
-width:180px;
+height:55px;
 }
 
-nav ul{
+.navbar{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:15px;
-padding:0;
 }
 
-.hero{
-display:flex;
+.navbar a{
+font-size:16px;
+}
+
+.header-buttons{
 flex-direction:column;
-padding:40px 20px;
+width:100%;
+}
+
+.call-btn,
+.whatsapp-btn{
+width:100%;
 text-align:center;
 }
 
-.hero-left,
-.hero-right{
-width:100%;
+/* Hero */
+
+.hero{
+padding:60px 20px;
+min-height:auto;
+}
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
 }
 
 .hero-left h1{
-font-size:42px;
-line-height:1.15;
+font-size:38px;
+}
+
+.hero-left h3{
+font-size:22px;
 }
 
 .hero-left p{
-font-size:17px;
+font-size:16px;
 }
 
-.hero-right img{
-width:100%;
-max-width:350px;
-margin:30px auto;
-display:block;
+.hero-features{
+grid-template-columns:1fr;
 }
 
 .hero-buttons{
-display:flex;
 flex-direction:column;
-gap:15px;
 }
 
-.hero-buttons a{
+.book-btn,
+.call-btn2{
 width:100%;
+text-align:center;
 }
 
-.features,
-.stats,
-.services-grid,
-.gallery-grid,
-.testimonial-grid,
-.contact-container{
-display:grid;
+.hero-right img{
+max-width:320px;
+margin:auto;
+}
+
+/* Stats */
+
+.stats{
 grid-template-columns:1fr;
-gap:20px;
 }
 
-.stat-box,
-.service-card,
-.gallery-item,
-.testimonial{
-width:100%;
+/* Services */
+
+.services-grid{
+grid-template-columns:1fr;
 }
 
-section{
-padding:60px 20px;
+/* Gallery */
+
+.gallery-grid{
+grid-template-columns:1fr;
 }
 
-img{
-max-width:100%;
-height:auto;
+.gallery-img{
+height:220px;
+}
+
+/* Testimonials */
+
+.testimonial-grid{
+grid-template-columns:1fr;
+}
+
+/* Booking */
+
+.booking form{
+padding:25px;
+}
+
+/* Contact */
+
+.contact h2{
+font-size:30px;
+}
+
+.contact p{
+font-size:16px;
+}
+
+/* Footer */
+
+footer{
+font-size:14px;
+}
+
+}
+
+/* Small Phones */
+
+@media (max-width:480px){
+
+.hero-left h1{
+font-size:30px;
+}
+
+.section-title h2{
+font-size:30px;
+}
+
+.stat-box h2{
+font-size:28px;
 }
 
 }
