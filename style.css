@@ -11,7 +11,7 @@ font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
-body{
+body{ padding-top:95px;
 background:#EAF8FF;
 color:#222;
 line-height:1.7;
@@ -20,21 +20,22 @@ line-height:1.7;
 /* Header */
 
 header{
-position:sticky;
-top:0;
-left:0;
-width:100%;
-background:#0099FF;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 8%;
-z-index:999;
-box-shadow:0 5px 20px rgba(0,0,0,.15);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 6%;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+    z-index:1000;
 }
 
 .logo img{
-height:70px;
+    height:70px;
+    width:auto;
 }
 
 nav{
@@ -43,14 +44,15 @@ gap:25px;
 }
 
 nav a{
-color:#fff;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
+    color:#222;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:600;
+    transition:.3s;
 }
 
 nav a:hover{
-color:#FFD700;
+    color:#0A84FF;
 }
 
 /* Hero */
